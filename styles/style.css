@@ -11,6 +11,11 @@
 */
 
 .page {
+  display: grid;
+  justify-content: center;
+  align-items: start;
+  gap: 100px;
+  padding-block-start: 100px;
   color: var(--main-color);
   font-family: var(--main-font), sans-serif;
   font-size: 18px;
@@ -22,4 +27,28 @@
   min-inline-size: 320px;
   min-block-size: 100dvb;
   font-variation-settings: "wght" var(--main-text-weight);
+}
+
+.header {
+  display: grid;
+  justify-content: center;
+  gap: 20px;
+  border: 2px solid currentColor;
+  padding-block: clamp(120px, 25.29vw, 130px);
+  font-family: var(--accent-font), sans-serif;
+  text-transform: uppercase;
+  background-color: var(--bg-color);
+  inline-size: var(--block-width);
+}
+
+.header__logo {
+  font-size: clamp(3.0625rem, 1.9087rem + 4.9231vw, 4.0625rem);
+  text-decoration: none;
+  pointer-events: none;
+}
+
+.header__title {
+  font-weight: 400;
+  font-size: clamp(0.875rem, 0.226rem + 2.7692vw, 1.4375rem);
+  text-align: center;
 }
