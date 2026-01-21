@@ -163,7 +163,6 @@
 }
 
 .card__icon-button {
-  border: none;
   border: 2px solid transparent;
   background-color: transparent;
   transition: border 0.3s ease;
