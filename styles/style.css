@@ -9,6 +9,16 @@
 
 */
 
+/* Это было самое начало пути. На этом этапе важно было проникнуться основами и настроиться на учёбу. И, возможно, подумать, как новые знания могут повлиять на ваше будущее. */
+
+/* identical to box height */
+/* закрывающий тег */
+/* identical to box height */
+/* </HTML> */
+/* identical to box height */
+/* watermark */
+/* identical to box height */
+
 .page {
   display: grid;
   justify-content: center;
@@ -42,6 +52,7 @@
 
 .header__logo {
   font-size: clamp(3.0625rem, 1.9087rem + 4.9231vw, 4.0625rem);
+  line-height: 100%;
   text-decoration: none;
   pointer-events: none;
 }
@@ -53,6 +64,7 @@
 .header__title {
   font-weight: 400;
   font-size: clamp(0.875rem, 0.226rem + 2.7692vw, 1.4375rem);
+  line-height: 100%;
   text-align: center;
 }
 
@@ -75,6 +87,7 @@
 .card__title {
   padding: 5px 10px 4px;
   font-size: 18px;
+  line-height: 100%;
   font-variation-settings: 'wght' var(--main-title-weight);
 }
 
@@ -88,6 +101,7 @@
   opacity: 0.5;
   font-family: var(--accent-font), sans-serif;
   font-size: 14px;
+  line-height: 100%;
   text-transform: uppercase;
   text-shadow:
     -1px 0 var(--stroke-color),
@@ -117,35 +131,35 @@
   inline-size: 100%;
 }
 
-.card__image.start {
+.card__image.hue-rotate-grayscale {
   filter: hue-rotate(340deg) grayscale(50%);
 }
 
-.card__image.first-sprint-start {
+.card__image.bright {
   filter: brightness(130%);
 }
 
-.card__image.first-sprint-end {
+.card__image.contrast {
   filter: contrast(160%);
 }
 
-.card__image.second-sprint-start {
+.card__image.saturate-contrast-bright {
   filter: saturate(190%) contrast(150%) brightness(70%);
 }
 
-.card__image.second-sprint-end {
+.card__image.bright-contrast {
   filter: brightness(70%) contrast(115%);
 }
 
-.card__image.third-sprint-start {
+.card__image.invert-hue-rotate {
   filter: invert(85%) hue-rotate(165deg);
 }
 
-.card__image.third-sprint-end {
+.card__image.blur {
   filter: blur(2px);
 }
 
-.card__image.here-and-now {
+.card__image.sepia {
   filter: sepia(75%);
 }
 
@@ -153,6 +167,7 @@
   display: grid;
   gap: 25px;
   padding: 25px;
+  line-height: 117%;
 }
 
 .card__buttons {
@@ -252,6 +267,7 @@
   overflow: hidden;
   font-family: var(--accent-font), sans-serif;
   font-size: 14px;
+  line-height: 90%;
   background-color: var(--bg-color);
   transition: box-shadow 0.3s ease;
   cursor: pointer;
