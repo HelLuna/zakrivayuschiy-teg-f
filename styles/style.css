@@ -9,33 +9,19 @@
 
 */
 
-/* Это было самое начало пути. На этом этапе важно было проникнуться основами и настроиться на учёбу. И, возможно, подумать, как новые знания могут повлиять на ваше будущее. */
-
-/* identical to box height */
-/* закрывающий тег */
-/* identical to box height */
-/* </HTML> */
-/* identical to box height */
-/* watermark */
-/* identical to box height */
-
 .page {
   display: grid;
   justify-content: center;
   align-items: start;
-  gap: 94px;
+  gap: 96px;
   padding-block: 100px;
-  color: var(--main-color);
-  font-family: var(--main-font), sans-serif;
+  color: var(--main-color, #000);
+  font-family: var(--main-font, 'Inter-Variable', sans-serif);
   font-size: 18px;
-  background-color: var(--bg-color);
-  background-image: var(--bg-gradient);
-  background-position: center;
-  background-size: cover;
-  background-attachment: fixed;
+  background: var(--bg-gradient) center / cover fixed var(--bg-color, #fff);
   min-inline-size: 320px;
   min-block-size: 100dvb;
-  font-variation-settings: 'wght' var(--main-text-weight);
+  font-variation-settings: 'wght' var(--main-text-weight, 410);
 }
 
 .header {
@@ -44,10 +30,10 @@
   gap: 20px;
   border: 2px solid currentColor;
   padding-block: clamp(120px, 25.29vw, 130px);
-  font-family: var(--accent-font), sans-serif;
+  font-family: var(--accent-font, 'PressStart2P', fantasy);
   text-transform: uppercase;
-  background-color: var(--bg-color);
-  inline-size: var(--block-width);
+  background-color: var(--bg-color, #fff);
+  inline-size: var(--block-width, clamp(375px, 100vw, 700px));
 }
 
 .header__logo {
@@ -80,48 +66,20 @@
 
 .card {
   border: 2px solid currentColor;
-  background-color: var(--bg-color);
-  inline-size: var(--block-width);
+  background-color: var(--bg-color, #fff);
+  inline-size: var(--block-width, clamp(375px, 100vw, 700px));
 }
 
 .card__title {
-  padding: 5px 10px 4px;
+  padding: 5px 10px;
   font-size: 18px;
   line-height: 100%;
-  font-variation-settings: 'wght' var(--main-title-weight);
+  font-variation-settings: 'wght' var(--main-title-weight, 715);
 }
 
 .card__label-wrapper {
   position: relative;
   border-block: 2px solid currentColor;
-}
-
-.watermark {
-  position: absolute;
-  opacity: 0.5;
-  font-family: var(--accent-font), sans-serif;
-  font-size: 14px;
-  line-height: 100%;
-  text-transform: uppercase;
-  text-shadow:
-    -1px 0 var(--stroke-color),
-    0 1px var(--stroke-color),
-    1px 0 var(--stroke-color),
-    0 -1px var(--stroke-color);
-  inset-inline-end: 25px;
-  inset-block-start: 27px;
-  mix-blend-mode: hard-light;
-}
-
-@supports (
-  (text-stroke: 1px var(--stroke-color)) or
-    (-webkit-text-stroke: 1px var(--stroke-color))
-) {
-  .watermark {
-    text-shadow: none;
-    -webkit-text-stroke: 1px var(--stroke-color);
-    text-stroke: 1px var(--stroke-color);
-  }
 }
 
 .card__image {
@@ -163,6 +121,34 @@
   filter: sepia(75%);
 }
 
+.watermark {
+  position: absolute;
+  opacity: 0.5;
+  font-family: var(--accent-font, 'PressStart2P', fantasy);
+  font-size: 14px;
+  line-height: 100%;
+  text-transform: uppercase;
+  text-shadow:
+    -1px 0 var(--stroke-color, #fff),
+    0 1px var(--stroke-color, #fff),
+    1px 0 var(--stroke-color, #fff),
+    0 -1px var(--stroke-color, #fff);
+  inset-inline-end: 25px;
+  inset-block-start: 27px;
+  mix-blend-mode: hard-light;
+}
+
+@supports (
+  (text-stroke: 1px var(--stroke-color, #fff)) or
+    (-webkit-text-stroke: 1px var(--stroke-color, #fff))
+) {
+  .watermark {
+    text-shadow: none;
+    -webkit-text-stroke: 1px var(--stroke-color, #fff);
+    text-stroke: 1px var(--stroke-color, #fff);
+  }
+}
+
 .card__content {
   display: grid;
   gap: 25px;
@@ -190,7 +176,7 @@
 }
 
 .card__icon-button:focus-visible {
-  border: 2px solid var(--accent-color);
+  border: 2px solid var(--accent-color, #000);
 }
 
 .like-icon {
@@ -218,22 +204,22 @@
 }
 
 .like-icon:hover .main-body {
-  fill: var(--accent-color);
+  fill: var(--accent-color, #000);
   transition-delay: 0.05s;
 }
 
 .like-icon:hover .core {
-  fill: var(--accent-color);
+  fill: var(--accent-color, #000);
   transition-delay: 0s;
 }
 
 .like-icon:active .main-body {
-  fill: var(--animation-fill-color);
+  fill: var(--animation-fill-color, red);
   transition-delay: 0.05s;
 }
 
 .like-icon:active .core {
-  fill: var(--animation-fill-color);
+  fill: var(--animation-fill-color, red);
   transition-delay: 0s;
 }
 
@@ -242,18 +228,18 @@
 }
 
 .like-icon.is-liked .contour {
-  fill: var(--animation-fill-color);
+  fill: var(--animation-fill-color, red);
   transition-delay: 0.06s;
   transition-duration: 0.3s;
 }
 
 .like-icon.is-liked .main-body {
-  fill: var(--animation-fill-color);
+  fill: var(--animation-fill-color, red);
   transition-delay: 0.05s;
 }
 
 .like-icon.is-liked .core {
-  fill: var(--animation-fill-color);
+  fill: var(--animation-fill-color, red);
   transition-delay: 0s;
 }
 
@@ -265,10 +251,10 @@
   position: relative;
   border: 2px solid currentColor;
   overflow: hidden;
-  font-family: var(--accent-font), sans-serif;
+  font-family: var(--accent-font, 'PressStart2P', fantasy);
   font-size: 14px;
   line-height: 90%;
-  background-color: var(--bg-color);
+  background-color: var(--bg-color, #fff);
   transition: box-shadow 0.3s ease;
   cursor: pointer;
 }
@@ -277,7 +263,7 @@
   content: '';
   position: absolute;
   inset: 0;
-  background-color: var(--main-color);
+  background-color: var(--main-color, #000);
   transition: translate 0.5s ease-in-out;
   block-size: 100%;
   translate: -100%;
@@ -288,19 +274,19 @@
 }
 
 .button:focus {
-  box-shadow: 2px 2px 0 var(--accent-color);
+  box-shadow: 2px 2px 0 var(--accent-color, #000);
   outline: none;
-}
-
-.button__text {
-  position: relative;
-  color: var(--hover-effect-color);
-  mix-blend-mode: difference;
 }
 
 .card__like-button {
   inline-size: 130px;
   block-size: 38px;
+}
+
+.button__text {
+  position: relative;
+  color: var(--hover-effect-color, #fff);
+  mix-blend-mode: difference;
 }
 
 .save-button {
@@ -313,7 +299,7 @@
 
 .save-icon {
   position: relative;
-  color: var(--hover-effect-color);
+  color: var(--hover-effect-color, #fff);
   inline-size: 21px;
   block-size: 21px;
   mix-blend-mode: difference;
@@ -342,15 +328,20 @@
 }
 
 .dialog__text {
-  font-family: var(--accent-font), sans-serif;
+  font-family: var(--accent-font, 'PressStart2P', fantasy);
   font-size: 14px;
   line-height: 150%;
   text-transform: uppercase;
 }
 
-.ok-button {
+.dialog__form {
   grid-column: span 2;
   block-size: 38px;
+}
+
+.ok-button {
+  inline-size: 100%;
+  block-size: 100%;
 }
 
 @media (width <= 375px) {
